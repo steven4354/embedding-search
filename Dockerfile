@@ -6,14 +6,21 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     wget
 
-# Install Jupyter
-RUN python3 -m pip install jupyter
+# Install the packages listed in requirements.txt
+COPY requirements.txt .
+RUN python3 -m pip install -r requirements.txt
 
 # Set the working directory
 WORKDIR /app
 
 # Copy the Jupyter notebook files from the host to the container
 COPY . .
+
+# Copy the .env file to the container
+COPY .env .
+
+# Set the environment variables using the values from the .env file
+RUN set -o allexport; source .env; set +o allexport
 
 # Expose the default Jupyter port
 EXPOSE 8888
