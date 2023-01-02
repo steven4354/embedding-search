@@ -2,6 +2,8 @@ insert into pinecone
 
 ## Run
 
+quick command
+
 ```
 source .env \
 && docker build -t embedding-search . \
@@ -10,3 +12,10 @@ source .env \
 && docker run -v $(pwd):/app -p 8888:8888 embedding-search
 ```
 
+explanation
+
+```
+docker run -v $(pwd):/app -p 8888:8888 embedding-search
+```
+
+-v allows the changes in /app in docker container to come back to this folder
