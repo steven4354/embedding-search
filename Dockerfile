@@ -16,11 +16,11 @@ WORKDIR /app
 # Copy the Jupyter notebook files from the host to the container
 COPY . .
 
-# Copy the .env file to the container
-COPY .env .
-
 # Set the environment variables using the values from the .env file
-RUN set -o allexport; source .env; set +o allexport
+ARG PINECONE_API_KEY
+ARG OPENAI_KEY
+ENV OPENAI_KEY=$OPENAI_KEY
+ENV PINECONE_API_KEY=$PINECONE_API_KEY
 
 # Expose the default Jupyter port
 EXPOSE 8888

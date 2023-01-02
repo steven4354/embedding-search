@@ -2,3 +2,6 @@ pandas
 jupyter
 pyarrow
 fastparquet
+openai
+matplotlib
+plotly
