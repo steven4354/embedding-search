@@ -5,3 +5,10 @@ fastparquet
 openai
 matplotlib
 plotly
+transformers
+scipy
+scikit-learn
+tqdm
+pinecone-client 
+ipywidgets
+sentence_transformers

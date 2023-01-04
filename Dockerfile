@@ -19,8 +19,10 @@ COPY . .
 # Set the environment variables using the values from the .env file
 ARG PINECONE_API_KEY
 ARG OPENAI_KEY
+ARG ISCRAPER_API_KEY
 ENV OPENAI_KEY=$OPENAI_KEY
 ENV PINECONE_API_KEY=$PINECONE_API_KEY
+ENV ISCRAPER_API_KEY=$ISCRAPER_API_KEY
 
 # Expose the default Jupyter port
 EXPOSE 8888
