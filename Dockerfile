@@ -1,4 +1,5 @@
 FROM ubuntu:20.04
+FROM python:3.8
 
 # Install system packages and dependencies
 RUN apt-get update && apt-get install -y \
@@ -8,6 +9,7 @@ RUN apt-get update && apt-get install -y \
 
 # Install the packages listed in requirements.txt
 COPY requirements.txt .
+RUN python3 -m pip install scikit-learn
 RUN python3 -m pip install -r requirements.txt
 
 # Set the working directory
